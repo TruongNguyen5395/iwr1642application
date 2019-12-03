@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>IPS2019</title>
+
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
+
+    <!-- Styles -->
+    <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+    <!--Themes Jquery Bar Rating-->
+    <link href="assets/css/lib/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/lib/menubar/sidebar.css" rel="stylesheet">
+    <link href="assets/css/lib/bootstrap.min.css" rel="stylesheet">
+	
+    <link href="assets/css/lib/helper.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano">
+            <div class="nano-content">
+                <ul>
+                    <div class="logo"><a href="https://uwb.herokuapp.com"><!-- <img src="assets/images/logo.png" alt="" /> --><span>IPS2019</span></a></div>
+                    <li class="label">Main</li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard <span class="badge badge-primary">1</span> <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="*">Dashboard</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="label">Apps</li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-map"></i> Maps <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="/indoor-map">Indoor Map</a></li>
+                            <li><a href="/vector-map">Vector Map</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i>  Charts  <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="chart-flot.ejs">Flot</a></li>
+                            <li><a href="chart-morris.ejs">Morris</a></li>
+                            <li><a href="chartjs.ejs">Chartjs</a></li>
+                            <li><a href="chartist.ejs">Chartist</a></li>
+                            <li><a href="chart-peity.ejs">Peity</a></li>
+                            <li><a href="chart-sparkline.ejs">Sparkle</a></li>
+                            <li><a href="chart-knob.ejs">Knob</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="app-event-calender.ejs"><i class="ti-calendar"></i> Calender </a></li>
+                    <li class="label">Features</li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-panel"></i> Components <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="uc-calendar.ejs">Calendar</a></li>
+                            <li><a href="uc-weather.ejs">Weather</a></li>
+                            <li><a href="uc-datamap.ejs">Datamap</a></li>
+                            <li><a href="uc-todo-list.ejs">To do</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid4-alt"></i> Table <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="table-basic.ejs">Basic</a></li>
+
+                            <li><a href="table-export.ejs">Datatable Export</a></li>
+                            <li><a href="table-row-select.ejs">Datatable Row Select</a></li>
+                            <li><a href="table-jsgrid.ejs">Editable </a></li>
+                        </ul>
+                    </li>
+                    <li class="label">Form</li>
+                    <li><a href="form-basic.ejs"><i class="ti-view-list-alt"></i> Basic Form </a></li>
+                    <li class="label">Extra</li>
+                    <li><a class="sidebar-sub-toggle"><i class="ti-target"></i> Pages <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="https://uwb.herokuapp.com/users/login">Login</a></li>
+                            <li><a href="https://uwb.herokuapp.com/users/register">Register</a></li>
+                            <li><a href="page-reset-password.ejs">Forgot password</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../documentation/index.ejs"><i class="ti-file"></i> Documentation</a></li>
+                    <li><a href="/users/logout"><i class="ti-close"></i> Log out</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        <!-- /# sidebar -->
+
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="float-left">
+                        <div class="hamburger sidebar-toggle">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="float-right">
+                        <div class="dropdown dib">
+                            <div class="header-icon" data-toggle="dropdown">
+                                <i class="ti-bell"></i>
+                                <div class="drop-down dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-content-heading">
+                                        <span class="text-left">Recent Notifications</span>
+                                    </div>
+                                    <div class="dropdown-content-body">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/3.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Mr. John</div>
+                                                        <div class="notification-text">5 members joined today </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/3.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Mariam</div>
+                                                        <div class="notification-text">likes a photo of you</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/3.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Tasnim</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/3.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Mr. John</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="text-center">
+                                                <a href="#" class="more-link">See All</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown dib">
+                            <div class="header-icon" data-toggle="dropdown">
+                                <i class="ti-email"></i>
+                                <div class="drop-down dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-content-heading">
+                                        <span class="text-left">2 New Messages</span>
+                                        <a href="email.html">
+                                            <i class="ti-pencil-alt pull-right"></i>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown-content-body">
+                                        <ul>
+                                            <li class="notification-unread">
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/1.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Michael Qin</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="notification-unread">
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/2.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Mr. John</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/3.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Michael Qin</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/2.jpg" alt="" />
+                                                    <div class="notification-content">
+                                                        <small class="notification-timestamp pull-right">02:34 PM</small>
+                                                        <div class="notification-heading">Mr. John</div>
+                                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="text-center">
+                                                <a href="#" class="more-link">See All</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown dib">
+                            <div class="header-icon" data-toggle="dropdown">
+                                <span class="user-avatar">Hoang Tri
+                                    <i class="ti-angle-down f-s-10"></i>
+                                </span>
+                                <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
+                                    <div class="dropdown-content-heading">
+                                        <span class="text-left">Upgrade Now</span>
+                                        <p class="trial-day">30 Days Trail</p>
+                                    </div>
+                                    <div class="dropdown-content-body">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="ti-user"></i>
+                                                    <span>Profile</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">
+                                                    <i class="ti-email"></i>
+                                                    <span>Inbox</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="ti-settings"></i>
+                                                    <span>Setting</span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">
+                                                    <i class="ti-lock"></i>
+                                                    <span>Lock Screen</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="ti-power-off"></i>
+                                                    <span>Logout</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+                <div class="row">
+					<div class="col-md-8">
+						<h1>Hello, <span>Welcome Here</span></h1>
+					</div>
+					<div class="col-md-4">
+						<nav class="float-right">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Vector Map</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+                <!-- /# row -->
+                <section id="main-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card nestable-cart">
+                                <div class="card-title">
+                                    <h4>World</h4>
+                                    <div class="card-title-right-icon">
+                                        <ul>
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Vector-map-js">
+                                    <div id="vmap" class="vmap"></div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+                    </div>
+                    <!-- /# row -->
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card nestable-cart">
+                                <div class="card-title">
+                                    <h4>Algeria</h4>
+                                    <div class="card-title-right-icon">
+                                        <ul>
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Vector-map-js">
+                                    <div id="vmap2" class="vmap"></div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+
+                        <div class="col-lg-6">
+                            <div class="card nestable-cart">
+                                <div class="card-title">
+                                    <h4>Argentina</h4>
+                                    <div class="card-title-right-icon">
+                                        <ul>
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Vector-map-js">
+                                    <div id="vmap3" class="vmap"></div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+                    </div>
+                    <!-- /# row -->
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card nestable-cart">
+                                <div class="card-title">
+                                    <h4>Brazil</h4>
+                                    <div class="card-title-right-icon">
+                                        <ul>
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Vector-map-js">
+                                    <div id="vmap4" class="vmap"></div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+
+                        <div class="col-lg-6">
+                            <div class="card nestable-cart">
+                                <div class="card-title">
+                                    <h4>France</h4>
+                                    <div class="card-title-right-icon">
+                                        <ul>
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Vector-map-js">
+                                    <div id="vmap5" class="vmap"></div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+                    </div>
+                    <!-- /# row -->
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card nestable-cart">
+                                <div class="card-title">
+                                    <h4>Germany</h4>
+                                    <div class="card-title-right-icon">
+                                        <ul>
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Vector-map-js">
+                                    <div id="vmap6" class="vmap"></div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+
+                        <div class="col-lg-6">
+                            <div class="card nestable-cart">
+                                <div class="card-title">
+                                    <h4>Greece</h4>
+                                    <div class="card-title-right-icon">
+                                        <ul>
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Vector-map-js">
+                                    <div id="vmap7" class="vmap"></div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+                    </div>
+                    <!-- /# row -->
+
+
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card nestable-cart">
+                                <div class="card-title">
+                                    <h4>Russia</h4>
+                                    <div class="card-title-right-icon">
+                                        <ul>
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Vector-map-js">
+                                    <div id="vmap10" class="vmap"></div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+
+                        <div class="col-lg-6">
+                            <div class="card nestable-cart">
+                                <div class="card-title">
+                                    <h4>Tunasia</h4>
+                                    <div class="card-title-right-icon">
+                                        <ul>
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Vector-map-js">
+                                    <div id="vmap11" class="vmap"></div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+                    </div>
+                    <!-- /# row -->
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card nestable-cart">
+                                <div class="card-title">
+                                    <h4>Europe</h4>
+                                    <div class="card-title-right-icon">
+                                        <ul>
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Vector-map-js">
+                                    <div id="vmap12" class="vmap"></div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+
+                        <div class="col-lg-6">
+                            <div class="card nestable-cart">
+                                <div class="card-title">
+                                    <h4>USA</h4>
+                                    <div class="card-title-right-icon">
+                                        <ul>
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Vector-map-js">
+                                    <div id="vmap13" class="vmap"></div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+                    </div>
+                    <!-- /# row -->
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card nestable-cart">
+                                <div class="card-title">
+                                    <h4>Turkey</h4>
+                                    <div class="card-title-right-icon">
+                                        <ul>
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Vector-map-js">
+                                    <div id="vmap14" class="vmap"></div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+
+                        <div class="col-lg-6">
+                            <div class="card nestable-cart">
+                                <div class="card-title">
+                                    <h4>Inactive Regions</h4>
+                                    <div class="card-title-right-icon">
+                                        <ul>
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="Vector-map-js">
+                                    <div id="vmap15" class="vmap"></div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+                    </div>
+                    <!-- /# row -->
+
+
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="footer">
+                                <p>2019 © HCMUT Lab - <a href="https://uwb.herokuapp.com">Indoor Positioning System</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <!-- jquery vendor -->
+    <script src="assets/js/lib/jquery.min.js"></script>
+    <script src="assets/js/lib/jquery.nanoscroller.min.js"></script>
+    <!-- nano scroller -->
+    <script src="assets/js/lib/menubar/sidebar.js"></script>
+    <script src="assets/js/lib/preloader/pace.min.js"></script>
+    <!-- sidebar -->
+    <!-- scripit init-->
+    <script src="assets/js/lib/bootstrap.min.js"></script><script src="assets/js/scripts.js"></script>
+    
+    <!-- bootstrap -->
+
+
+    <script src="assets/js/lib/vector-map/jquery.vmap.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/jquery.vmap.min.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.algeria.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.argentina.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.brazil.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.france.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.germany.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.greece.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.iran.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.iraq.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.russia.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.tunisia.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.europe.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.usa.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/country/jquery.vmap.turkey.js"></script>
+    <!-- scripit init-->
+    <script src="assets/js/lib/vector-map/vector.init.js"></script>
+    <!-- scripit init-->
+</body>
+
+</html>

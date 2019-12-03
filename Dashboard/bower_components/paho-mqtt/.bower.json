@@ -1,0 +1,28 @@
+{
+  "name": "paho-mqtt",
+  "main": "src/mqttws31.js",
+  "homepage": "https://github.com/larrytin/paho.mqtt.javascript",
+  "authors": [
+    "Larry Tin <dev@goodow.com>"
+  ],
+  "description": "Bower package for Paho MQTT JavaScript Client",
+  "license": "epl-v10",
+  "keywords": [
+    "mqtt",
+    "paho"
+  ],
+  "ignore": [
+    "*",
+    "!src/mqttws31.js"
+  ],
+  "_release": "379d4adf17",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "379d4adf17dd49c49f02f7731adcfb6c57f356a3"
+  },
+  "_source": "https://github.com/larrytin/paho.mqtt.javascript.git",
+  "_target": "*",
+  "_originalSource": "paho-mqtt",
+  "_direct": true
+}

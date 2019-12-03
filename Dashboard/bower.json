@@ -1,0 +1,22 @@
+{
+  "name": "node_passport_login",
+  "description": "Node.js authentication with Passport",
+  "main": "app.js",
+  "authors": [
+    "hoangtri3796 <hoangtri3796@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/hoangtri3796/ips2019",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "leaflet": "^1.5.1",
+    "paho-mqtt": "*"
+  }
+}
