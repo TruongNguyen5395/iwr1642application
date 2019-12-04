@@ -25,7 +25,7 @@
     "leaflet": "^1.5.1",
     "leaflet-canvas-marker": "^0.2.0",
     "leaflet-moving-marker": "^0.3.0",
-    "mongoose": "^5.4.1",
+    "mongoose": "^5.7.5",
     "mqtt": "^3.0.0",
     "paho-mqtt": "^1.1.0",
     "passport": "^0.4.0",
