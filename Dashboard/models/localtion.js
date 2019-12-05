@@ -9,6 +9,6 @@ const localtionSchema = new mongoose.Schema({
     date:{type: Date, default: Date.now}
 });
 
-const localtion = mongoose.model("localtion",localtionSchema,"localtion");
+const localtion = mongoose.model("localtion",localtionSchema);
 
 module.exports = localtion;

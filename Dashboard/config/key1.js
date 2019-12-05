@@ -1,7 +1,8 @@
-//dblocation = 'mongodb+srv://hoangtri:'+ encodeURIComponent('d8FxjZl8jHRT9kOH') + '@cluster1-89k8p.mongodb.net/test?retryWrites=true&w=majority';
+const mongoose = require ('mongoose');
 
-dblocation = 'mongodb://localhost:27017/auth1';
+mongoose.connect('mongodb://localhost:27017/targetDB',{ useNewUrlParser: true,useUnifiedTopology: true }, (err) => {
+    if (!err) { console.log('MongoDB connection Success.') }
+    else { console.log('Error in DB Connection : ' + err) }
+});
 
-module.exports = {
-    mongoURI: dblocation
-};
+require ('../models/target.model');
