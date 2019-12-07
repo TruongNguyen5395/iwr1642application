@@ -937,250 +937,106 @@
     <div class="content-wrap">
       <div class="main-grid">
         <!-- <div class="container-fluid"> -->
-            <div class="chart-heading">
-                <h2>Charts</h2>
-              </div>
-        
-          <section id="main-content">
-            <div class="row">
-
-              <div class="column left">
-
-                <!-- <input id="tab1" type="radio" name="tabs" checked>
-                <label for="tab1">Main Door</label> -->
-
-                <!-- <input id="tab2" type="radio" name="tabs"> -->
-                <!-- <label for="tab2">Back Door</label> -->
-
-                <div class="display1" id="content1">
-                </div>
-                <canvas id="myCanvas" width="750" height="425" style="border:5px solid #d3d3d3;">
-                  <!-- <div class="display1" id="content2">
-                      <canvas id="map1"  width="890" height="500" style="border:5px solid #d3d3d3;">
-                  </div>
-                
-                  <div class="display1" id="content3">
-                      <canvas id="map2"  width="890" height="500" style="border:5px solid #d3d3d3;">
-                  </div>
-                
-                  <div class="display1" id="content4">
-                      <canvas id="map3"  width="890" height="500" style="border:5px solid #d3d3d3;">
-                  </div> -->
-
-
-                  <!-- ------------------------------------------------------------ -->
-
-
-              </div>
-
-              <div class="column right">
-                  <div class="card">
-                      <h3>Time Events</h3>
-                        <div id="graph10"></div>
-                        <script>
-                        var week_data = [
-                          {"period": "2011 W27", "licensed": 3407, "sorned": 660},
-                          {"period": "2011 W26", "licensed": 3351, "sorned": 629},
-                          {"period": "2011 W25", "licensed": 3269, "sorned": 618},
-                          {"period": "2011 W24", "licensed": 3246, "sorned": 661},
-                          {"period": "2011 W23", "licensed": 3257, "sorned": 667},
-                          {"period": "2011 W22", "licensed": 3248, "sorned": 627},
-                          {"period": "2011 W21", "licensed": 3171, "sorned": 660},
-                          {"period": "2011 W20", "licensed": 3171, "sorned": 676},
-                          {"period": "2011 W19", "licensed": 3201, "sorned": 656},
-                          {"period": "2011 W18", "licensed": 3215, "sorned": 622},
-                          {"period": "2011 W17", "licensed": 3148, "sorned": 632},
-                          {"period": "2011 W16", "licensed": 3155, "sorned": 681},
-                          {"period": "2011 W15", "licensed": 3190, "sorned": 667},
-                          {"period": "2011 W14", "licensed": 3226, "sorned": 620},
-                          {"period": "2011 W13", "licensed": 3245, "sorned": null},
-                          {"period": "2011 W12", "licensed": 3289, "sorned": null},
-                          {"period": "2011 W11", "licensed": 3263, "sorned": null},
-                          {"period": "2011 W10", "licensed": 3189, "sorned": null},
-                          {"period": "2011 W09", "licensed": 3079, "sorned": null},
-                          {"period": "2011 W08", "licensed": 3085, "sorned": null},
-                          {"period": "2011 W07", "licensed": 3055, "sorned": null},
-                          {"period": "2011 W06", "licensed": 3063, "sorned": null},
-                          {"period": "2011 W05", "licensed": 2943, "sorned": null},
-                          {"period": "2011 W04", "licensed": 2806, "sorned": null},
-                          {"period": "2011 W03", "licensed": 2674, "sorned": null},
-                          {"period": "2011 W02", "licensed": 1702, "sorned": null},
-                          {"period": "2011 W01", "licensed": 1732, "sorned": null}
-                        ];
-                        Morris.Line({
-                          element: 'graph10',
-                          data: week_data,
-                          xkey: 'period',
-                          ykeys: ['licensed', 'sorned'],
-                          labels: ['Licensed', 'SORN'],
-                          events: [
-                          '2011-04',
-                          '2011-08'
-                          ]
-                        });
-          </script>
-                    </div>
-              </div>
-
-
-              <!-- <div class="column right">
-                <div class="card">
-                  <div class="card-body p-b-0">
-                    <ul class="nav nav-tabs customtab2" role="tablist">
-                      <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home7" role="tab"><span
-                            class="hidden-sm-up"><i class="ti-anchor"></i></span> <span
-                            class="hidden-xs-down">Anchor</span></a> </li>
-                      <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile7" role="tab"><span
-                            class="hidden-sm-up"><i class="ti-tag"></i></span> <span
-                            class="hidden-xs-down">Tag</span></a> </li>
-                      <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages7" role="tab"><span
-                            class="hidden-sm-up"><i class="ti-server"></i></span> <span
-                            class="hidden-xs-down">Gateway</span></a> </li>
-                    </ul>
-                    <div class="tab-content">
-                      <div class="tab-pane active" id="home7" role="tabpanel">
-                        <div class="toastr" style="padding-top:20px">
-                          <div class="row">
-                            <div class="col-6">
-                              <h5>DWM 8305</h5>
-                              <p><small><i class="fa fa-circle text-success"></i></small>Online</p>
-                              <small>x: 3.43 , y: 5.43 , z: 1.63</small>
-                            </div>
-                            <div class="col-6">
-                              <button class="btn btn-success btn sweet-success">Edit</button>
-                              <button class="btn btn-info btn sweet-ajax">Find</button>
-                            </div>
-                          </div>
-                          <hr>
-                          <div class="row">
-                            <div class="col-6">
-                              <h5>DWM 4164</h5>
-                              <p><small><i class="fa fa-circle text-success"></i></small>Online</p>
-                              <small>x: 5.23 , y: 3.42 , z: 1.63</small>
-                            </div>
-                            <div class="col-6">
-                              <button class="btn btn-success btn sweet-success">Edit</button>
-                              <button class="btn btn-info btn sweet-ajax">Find</button>
-                            </div>
-                          </div>
-                          <hr>
-                          <div class="row">
-                            <div class="col-6">
-                              <h5>DWM 0384</h5>
-                              <p><small><i class="fa fa-circle text-success"></i></small>Online</p>
-                              <small>x: 4.55 , y: 2.74 , z: 1.63</small>
-                            </div>
-                            <div class="col-6">
-                              <button class="btn btn-success btn sweet-success">Edit</button>
-                              <button class="btn btn-info btn sweet-ajax">Find</button>
-                            </div>
-                          </div>
-                          <hr>
-                          <div class="row">
-                            <div class="col-6">
-                              <h5>DWM 0296</h5>
-                              <p><small><i class="fa fa-circle text-success"></i></small>Online</p>
-                              <small>x: 6.32 , y: 7.23 , z: 1.63</small>
-                            </div>
-                            <div class="col-6">
-                              <button class="btn btn-success btn sweet-success">Edit</button>
-                              <button class="btn btn-info btn sweet-ajax">Find</button>
-                            </div>
-                          </div>
-                          <hr>
-                          <div class="row">
-                            <div class="col-6">
-                              <h5>DWM 158C</h5>
-                              <p><small><i class="fa fa-circle text-success"></i></small>Online</p>
-                              <small>x: 9.32 , y: 6.23 , z: 1.63</small>
-                            </div>
-                            <div class="col-6">
-                              <button class="btn btn-success btn sweet-success">Edit</button>
-                              <button class="btn btn-info btn sweet-ajax">Find</button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class='file-input'>
-                          <input type='file'>
-                          <span class='button'>Upload Map</span>
-                          <span class='label' data-js-label>No file selected</label>
-                        </div>
-                      </div>
-
-                      <div class="tab-pane" id="profile7" role="tabpanel" style="padding-top:20px">
-                        <div class="row">
-                          <div class="col-6">
-                            <h5>DWM 152A</h5>
-                            <p><small><i class="fa fa-circle text-success"></i></small>Online</p>
-                          </div>
-                          <div class="col-6">
-                            <button class="btn btn-success btn sweet-success">Edit</button>
-                            <button type="button" class="popup btn btn-info btn sweet-ajax" onclick="myFunction()">Find
-                              <div class="popuptext" id='myPopup'>
-                                <h5 style="font-weight:bold;color:white">DWM152A</h5>
-                                <hr>
-                                <p id="posdata" style="color:white"></p>
-                                <p id='updateDate' style="color:white;text-align: center;"></p>
-                              </div>
-                            </button>
-                          </div>
-
-                        </div>
-                        <hr>
-                        <div class="row">
-                          <div class="col-6">
-                            <h5>DWM 0EA3</h5>
-                            <p><small><i class="fa fa-circle text-success"></i></small>Online</p>
-                            <p id="locdata"></p>
-                          </div>
-                          <div class="col-6">
-                            <button class="btn btn-success btn sweet-success">Edit</button>
-                            <button class="btn btn-info btn sweet-ajax">Find</button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane" id="messages7" role="tabpanel" style="padding-top:20px">
-                        <div class="row">
-                          <div class="col-6">
-                            <h5>Gateway 1</h5>
-                            <p><small><i class="fa fa-circle text-success"></i></small>Online</p>
-                          </div>
-                          <div class="col-6">
-                            <button class="btn btn-success btn sweet-success">Edit</button>
-                            <button class="btn btn-info btn sweet-auto">Stop</button>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <code style="padding-left: 20px">Data is transmitting</code>
-                        </div>
-                        <hr>
-                        <div class="row">
-                          <div class="col-6">
-                            <h5>Gateway 2</h5>
-                            <p><small><i class="fa fa-circle text-error"></i></small>Offline</p>
-                          </div>
-                          <div class="col-6">
-                            <button class="btn btn-success btn sweet-success">Edit</button>
-                            <button class="btn btn-info btn sweet-auto">Stop</button>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <code style="padding-left: 20px">Gateway is offline now</code>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-            </div>
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="footer">
-                  <p>2019 © HCMUT Lab - <a href="https://uwb.herokuapp.com">Indoor Positioning System</a></p>
+        <div class="chart-heading">
+          <h2>Charts</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="stat-widget-one">
+                <div class="stat-icon dib"><i class="ti-user color-success border-success"></i></div>
+                <div class="stat-content dib">
+                  <div class="stat-text", style="font-size: 25px">Number of customer entered:</div>
+                  <div class="stat-digit">1,012</div>
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+          <div class="col-lg-6">
+              <div class="card">
+                  <div class="stat-widget-one">
+                      <div class="stat-icon dib"><i class="ti-user color-success border-success"></i></div>
+                      <div class="stat-content dib">
+                          <div class="stat-text", style="font-size: 25px">Number of customer still inside:</div>
+                          <div class="stat-digit">243</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <section id="main-content">
+          <div class="row">
+
+            <div class="col-md-4 agile-grid-left">
+
+              <div class="display1" id="content1">
+              </div>
+
+              <canvas id="myCanvas" width="750" height="425" style="border:5px solid #d3d3d3;"></canvas>
+            </div>
+
+            <!-- --------------------------------------------------- -->
+
+            <div class="col-md-6 agile-grid-right">
+
+              <div class="card">
+                <h3>Time Events</h3>
+                <div id="graph10"></div>
+                <script>
+                  var week_data = [
+                    { "period": "2011 W27", "licensed": 3407, "sorned": 660 },
+                    { "period": "2011 W26", "licensed": 3351, "sorned": 629 },
+                    { "period": "2011 W25", "licensed": 3269, "sorned": 618 },
+                    { "period": "2011 W24", "licensed": 3246, "sorned": 661 },
+                    { "period": "2011 W23", "licensed": 3257, "sorned": 667 },
+                    { "period": "2011 W22", "licensed": 3248, "sorned": 627 },
+                    { "period": "2011 W21", "licensed": 3171, "sorned": 660 },
+                    { "period": "2011 W20", "licensed": 3171, "sorned": 676 },
+                    { "period": "2011 W19", "licensed": 3201, "sorned": 656 },
+                    { "period": "2011 W18", "licensed": 3215, "sorned": 622 },
+                    { "period": "2011 W17", "licensed": 3148, "sorned": 632 },
+                    { "period": "2011 W16", "licensed": 3155, "sorned": 681 },
+                    { "period": "2011 W15", "licensed": 3190, "sorned": 667 },
+                    { "period": "2011 W14", "licensed": 3226, "sorned": 620 },
+                    { "period": "2011 W13", "licensed": 3245, "sorned": null },
+                    { "period": "2011 W12", "licensed": 3289, "sorned": null },
+                    { "period": "2011 W11", "licensed": 3263, "sorned": null },
+                    { "period": "2011 W10", "licensed": 3189, "sorned": null },
+                    { "period": "2011 W09", "licensed": 3079, "sorned": null },
+                    { "period": "2011 W08", "licensed": 3085, "sorned": null },
+                    { "period": "2011 W07", "licensed": 3055, "sorned": null },
+                    { "period": "2011 W06", "licensed": 3063, "sorned": null },
+                    { "period": "2011 W05", "licensed": 2943, "sorned": null },
+                    { "period": "2011 W04", "licensed": 2806, "sorned": null },
+                    { "period": "2011 W03", "licensed": 2674, "sorned": null },
+                    { "period": "2011 W02", "licensed": 1702, "sorned": null },
+                    { "period": "2011 W01", "licensed": 1732, "sorned": null }
+                  ];
+                  Morris.Line({
+                    element: 'graph10',
+                    data: week_data,
+                    xkey: 'period',
+                    ykeys: ['licensed', 'sorned'],
+                    labels: ['Licensed', 'SORN'],
+                    events: [
+                      '2011-04',
+                      '2011-08'
+                    ]
+                  });
+                </script>
+              </div>
+              <!-- </div> -->
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="footer">
+                <p>2019 © HCMUT Lab - <a href="https://uwb.herokuapp.com">mmWAVE FMCW Radar Technology</a></p>
+              </div>
+            </div>
+          </div>
+        </section>
         <!-- </div> -->
       </div>
       <script src="socket.io/socket.io.js"></script>
