@@ -162,7 +162,7 @@ const db1 = require('./config/key1').mongoURI;
   db1,
   { useNewUrlParser: true }
 ) */
-/* cd
+/* 
 .then(() => console.log('MongoDB TargetDB Connected'))
 .catch(err => console.log(err)); */
 

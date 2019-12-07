@@ -1,30 +1,30 @@
 
-var mqtt = require('mqtt');
+// var mqtt = require('mqtt');
 
-var options = {
-   port:  14898,
-   clientId: 'mqttjs_' + Math.random().toString(16).substr(2, 8),
-   username: "pqabugnq",
-   password: "cHTTED1dggfc",
- };
+// var options = {
+//    port:  14898,
+//    clientId: 'mqttjs_' + Math.random().toString(16).substr(2, 8),
+//    username: "pqabugnq",
+//    password: "cHTTED1dggfc",
+//  };
   
- var client  = mqtt.connect('mqtt://postman.cloudmqtt.com', options)
+//  var client  = mqtt.connect('mqtt://postman.cloudmqtt.com', options)
   
-    client.on('connect', function() { // When connected
-        console.log('Connected');
-   // subscribe to a topic
-   client.subscribe('ips', function() {
-     // when a message arrives, do something with it
-     client.on('message', function(topic, message, packet) {
-         var msg = JSON.parse(message);
-         console.log(msg.Tag + "," +msg.x + "," + msg.y);
-          x = (msg.x/9.05) * 4720 + 1440 ;
-          y = -(msg.y/4.2) * 2190 + 2850;
-          console.log(x + "," + y);
-         //setlocation(msg.x , msg.y);
-        });
-    });
-  });
+//     client.on('connect', function() { // When connected
+//         console.log('Connected');
+//    // subscribe to a topic
+//    client.subscribe('ips', function() {
+//      // when a message arrives, do something with it
+//      client.on('message', function(topic, message, packet) {
+//          var msg = JSON.parse(message);
+//          console.log(msg.Tag + "," +msg.x + "," + msg.y);
+//           x = (msg.x/9.05) * 4720 + 1440 ;
+//           y = -(msg.y/4.2) * 2190 + 2850;
+//           console.log(x + "," + y);
+//          //setlocation(msg.x , msg.y);
+//         });
+//     });
+//   });
 //document.getElementById('image-map')
 /*var map = L.map('image-map', {
     minZoom: 1,
