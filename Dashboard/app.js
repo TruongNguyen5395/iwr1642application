@@ -103,7 +103,7 @@ function mqtt_messsageReceiv(topic, message, packet) {
 
 
 io.on('connection', socket => {
-  io.sockets.emit('data-sent', { ak: "LOVE", a1: myId, a2: myX, a3: myY });
+  io.sockets.emit('data-sent', { a1: myId, a2: myX, a3: myY });
   // console.log('io'+ myId);
   // console.log('io' + myX);
   // console.log('io' + myY);
