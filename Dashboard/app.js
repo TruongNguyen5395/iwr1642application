@@ -107,7 +107,8 @@ io.on('connection', socket => {
   // console.log('io'+ myId);
   // console.log('io' + myX);
   // console.log('io' + myY);
-  insertRecord(myId, myX, myY);
+  insertRecord(myId, myX, myY );
+
 });
 
 //-----------------------------------------------------------------------/
