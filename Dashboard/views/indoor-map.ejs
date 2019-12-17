@@ -947,7 +947,7 @@
                 <div class="stat-icon dib"><i class="ti-user color-success border-success"></i></div>
                 <div class="stat-content dib">
                   <div class="stat-text", style="font-size: 25px">Number of customer entered:</div>
-                  <div class="stat-digit">26</div>
+                  <div id="countInID" class="stat-digit">0</div>
                 </div>
               </div>
             </div>
@@ -1258,6 +1258,7 @@
 
       <script type="text/javascript">
 
+        let a4 = 0;
         setInterval(function () {
           const socket = io('http://localhost:3000');
 
@@ -1268,7 +1269,9 @@
           var offset = 375;
 
           socket.on('data-sent', (data) => {
-            console.log('After socket on: ' + data.a1);
+            if(data.a4 !==a4){
+              document.getElementById('countInID').innerHTML = data.a4;
+            }
 
             let A1 = data.a1;
             let A2 = data.a2;
@@ -1299,9 +1302,8 @@
               ctx.closePath();
 
             }
-
+            
             function draw() {
-
 
               ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
@@ -1311,7 +1313,6 @@
 
               }
               window.requestAnimationFrame(draw);
-
 
             }
             init();

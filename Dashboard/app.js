@@ -13,7 +13,7 @@ app.set("view engine", "ejs");
 //mmWAVE
 const mongoose = require('mongoose');
 const Location = mongoose.model('location');
-
+const Temp = mongoose.model('temp')
 // Express session
 app.use(
   session({
@@ -23,12 +23,13 @@ app.use(
   })
 );
 
+var numberInDB
 //-------------------------------------------------------------------//
 //---------------------------CloudMQTT-------------------------------//
 //-------------------------------------------------------------------//
 
 //const targetController = require('./config/targetController');
- 
+
 //app.use('/location', targetController);
 
 var mqtt = require('mqtt');
@@ -80,6 +81,19 @@ var myId;
 var myX;
 var myY;
 
+
+var arr1 = new Array(20).fill(0);
+var arr2 = new Array(20).fill(0);
+var arr3 = new Array(20).fill(0);
+
+let countIn  = 0;
+let countOut = 0;
+
+// setInterval(()=>{
+//   countIn = 0;
+// },86400)
+
+
 function mqtt_messsageReceiv(topic, message, packet) {
   var stringBuf = JSON.stringify(message.toString());
   // try {
@@ -91,11 +105,69 @@ function mqtt_messsageReceiv(topic, message, packet) {
   myX = dataresult[1];
   myY = dataresult[2];
 
-  console.log(myId);
-  console.log(myX);
-  console.log(myY);
-
+  // for (count = 0; count < myId.length; count++) {
+  //   if (myY[count] <= 1) {
+  //     Temp.update({tid : tid[count],})
+  //     }
+    
+  myId.map((value,index)=>{
+ 
+    // arr[value] = myY[index];
+    let y = myY[index]
+    if(y<=1){
+      if(arr2[value]===1 && arr3[value]===1){
+        countOut++ ;
+        arr2[value]=0;
+        arr3[value]=0;
+      }else if(arr2[value]===1 && arr3[value]===0){
+        arr2[value]=0;
+        arr1[value] =0;
+      }else{
+        arr1[value] =1
+      }
+    }else if(y >1 && y< 2){
+      arr2[value] = 1;
+    }else if(y >=2){
+      if(arr2[value]===1 && arr1[value]===1){
+        countIn++;
+        arr2[value]=0;
+        arr1[value] =0;
+      }else if(arr2[value]===1 && arr1[value]===0){
+        arr2[value]=0;
+        arr3[value] =0;
+      }else{
+        arr3[value] =1;
+      }
+    }
+    
+  })
+  console.log(countIn,countOut)
 }
+
+
+
+
+// Temp.count({ tid: { $exists: true, $in: myId[count] } }, function (err, number) {
+//   numberInDB = number;
+//   // console.log('number in idDB ' + numberInDB)
+// })
+// if (numberInDB == 0) {
+//   // console.log('Id va y sau khi check count: ' + myId[count] + '  ' + myY[count]);
+//   setTimeout(() => {
+//     insertTemp(myId[count], myY[count]);
+//     console.log('Insert: ' + myId[count]);
+//   }, timeout);
+
+// } else {
+//   console.log('number in idDB ********* ' + numberInDB)
+// }
+
+// console.log(myId);
+// console.log(myX);
+// console.log(myY);
+
+
+
 
 //-----------------------------------------------------------------------/
 //-----------------------------------------------------------------------/
@@ -103,11 +175,11 @@ function mqtt_messsageReceiv(topic, message, packet) {
 
 
 io.on('connection', socket => {
-  io.sockets.emit('data-sent', { a1: myId, a2: myX, a3: myY });
+  io.sockets.emit('data-sent', { a1: myId, a2: myX, a3: myY ,a4: countIn});
   // console.log('io'+ myId);
   // console.log('io' + myX);
   // console.log('io' + myY);
-  insertRecord(myId, myX, myY );
+  insertRecord(myId, myX, myY);
 
 });
 
@@ -131,9 +203,25 @@ function insertRecord(a, b, c) {
   });
 }
 
+// function insertTemp(d, e) {
+
+//   var temp = new Temp();
+//   temp.tid = JSON.stringify(d);
+//   temp.yAxis = JSON.stringify(e);
+
+//   temp.save((err, doc) => {
+//     if (!err)
+//       console.log("Inserted temp");
+//     else {
+//       console.log('Error During recprd insert: ' + err);
+//     }
+//   });
+// }
 //-----------------------------------------------------------------------/
 //-----------------------------------------------------------------------/
 //-----------------------------------------------------------------------/
+
+
 
 
 app.use(passport.initialize());
@@ -146,26 +234,6 @@ app.use(express.urlencoded({ extended: true }));
 //DB Config
 const db = require('./config/keys').mongoURI;
 const db1 = require('./config/key1').mongoURI;
-
-//Connect to Mongo
-
-/* ongoose
-  .connect(
-    db1,
-    { useNewUrlParser: true, useUnifiedTopology: true }
-  )
-
-  .then(() => console.log('MongoDB User Connected'))
-  .catch(err => console.log(err)); */
-  
-/* mongoose
-.connect(
-  db1,
-  { useNewUrlParser: true }
-) */
-/* 
-.then(() => console.log('MongoDB TargetDB Connected'))
-.catch(err => console.log(err)); */
 
 //connect flash
 app.use(flash());

@@ -443,7 +443,7 @@ def update():
             count = 0
             # while count<tid_comma.length:
             
-            if  mqttCount == 5:
+            if  mqttCount == 10:
                 # mqttc.publish ("date & time", str(datetime.datetime.now()))
                 mqttc.publish ("TARGET", str(result))
                 # mqttc.publish ("x", str(x_comma))

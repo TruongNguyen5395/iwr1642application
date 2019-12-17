@@ -97,6 +97,9 @@ router.post('/', (req, res) => {
     insertRecord(req, res);
 });
 
+router.post('/', (req, res) => {
+    insertTemp(req, res);
+});
 
 /* 
 function insertRecord(req, res) {
