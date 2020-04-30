@@ -21,7 +21,7 @@
     "fast-csv": "^3.0.1",
     "file-system": "^2.2.2",
     "fs": "0.0.1-security",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "leaflet": "^1.5.1",
     "leaflet-canvas-marker": "^0.2.0",
     "leaflet-moving-marker": "^0.3.0",
