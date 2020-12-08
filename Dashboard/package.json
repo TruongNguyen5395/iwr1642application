@@ -18,7 +18,7 @@
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.15.6",
-    "fast-csv": "^3.0.1",
+    "fast-csv": "^4.3.6",
     "file-system": "^2.2.2",
     "fs": "0.0.1-security",
     "jquery": "^3.4.1",
